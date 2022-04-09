@@ -1,21 +1,9 @@
-# Project 1.3 - COMS4111
-
-## Team
-
-Yifan Wang (yw3744) and Amrit Parimi (ap4142) <br>
-**TA:** Ding Pang <br>
-
-## Accessing the project
-
-PostgreSQL database account: ap4142 <br>
-Web application URL: http://35.227.97.156:8111/
+# Project 1 - COMS4111
 
 ## Overview
 
 In this project, we implemented a music streaming application with basic functionalities where users can query songs, artists, albums, playlists, etc. Apart from this, the users can also create private and public playlists after logging in. Users can also follow artists of their interest and subscribe playlists that they enjoy listening to. We provide users with some recommendations on artists to follow and songs to listen on the home page. 
-We use web scraping to get data from a music streaming website and load it to our database. We have 556 songs from 29 artists in our database. And we made a few changes based on project 1.2.
-* Combine table playlist and table created_by to playlist_createdby.
-* Remove table liked_by, which is the relationship between user and song, because we think adding song to a playlist can implement similar function.
+We use web scraping to get data from a music streaming website and load it to our database. We have 556 songs from 29 artists in our database.
 
 ## Description
 
@@ -34,8 +22,6 @@ The tables in our database are:
 * is_in: a song is_in a playlist, the relationship between song and playlist_createdby
 * starred_by: a playlist is starred_by a user, the relationship between user and playlist_createdby
 * followed_by: an artist is followed_by a user, the relationship between user and artist
-
-
 
 ## Web pages with interesting operations
 
