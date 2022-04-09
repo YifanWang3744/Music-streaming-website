@@ -4,8 +4,6 @@
 
 In this project, we implemented a music streaming application with basic functionalities where users can query songs, artists, albums, playlists, etc. Apart from this, the users can also create private and public playlists after logging in. Users can also follow artists of their interest and subscribe playlists that they enjoy listening to. We provide users with some recommendations on artists to follow and songs to listen on the home page. 
 We use web scraping to get data from a music streaming website and load it to our database. We have 556 songs from 29 artists in our database.<br>
-A screenshot of our website:
-![image](https://user-images.githubusercontent.com/93358121/162550292-4210cddc-3558-4618-b46b-93ad30bf6361.png)
 
 ## Description
 
@@ -30,3 +28,17 @@ The tables in our database are:
 * Search page: A query is made to a number of different tables to find songs, artists, albums and playlist that match a given search term. This required using pattern matching and case-insensitive querying. And we provide users with some recommendations on artists to follow and songs to listen on the home page, in order to get new users started.
 * Artist page with follow/unfollow option: This page displays an artist and all the albums released by the artist. Additionally, you can follow the artist and find your following artists on profile page if you are not following the artist, or unfollow the artist if you have already followed. This required querying in the followed_by table first with the artist_id of the artist on current page and user's log-in id to determine if the user is following the artist, then provide follow or unfollow function based on user's status and choice.
 * Playlist page with subscribe/unsubscribe option: This page displays a playlist and all the songs in it. You can subcribe the playlist if you are not subscribing, or unsubscribe it if you are. Silimarly, this required querying in the starred_by table first with the playlist_id of the playlist on current page and user's log-in id to determine if the user is subscribing the playlist, then provide subscribe or unsubscribe function based on user's status and choice.
+
+## Screenshots of our website
+* **Home page**
+![image](https://user-images.githubusercontent.com/93358121/162550292-4210cddc-3558-4618-b46b-93ad30bf6361.png)
+* **Create account**
+![image](https://user-images.githubusercontent.com/93358121/162550515-110aafcb-ee8d-4cfc-95c6-6d1ae88e4772.png)
+* **Create playlist**
+![image](https://user-images.githubusercontent.com/93358121/162550505-77a4d3ec-cf55-4e15-be60-eb2109bb4f82.png)
+* **Search result**
+![image](https://user-images.githubusercontent.com/93358121/162550559-1334613b-5960-4aa8-a089-009c5b18cf37.png)
+* **Artist page**
+![image](https://user-images.githubusercontent.com/93358121/162550480-c0f304e6-4ebd-435b-958b-cc96c1e80a2d.png)
+* **Playlist page**
+![image](https://user-images.githubusercontent.com/93358121/162550488-300c32f0-1059-47a2-81e4-d0091c5042b4.png)
