@@ -4,6 +4,7 @@
 
 In this project, we implemented a music streaming application with basic functionalities where users can query songs, artists, albums, playlists, etc. Apart from this, the users can also create private and public playlists after logging in. Users can also follow artists of their interest and subscribe playlists that they enjoy listening to. We provide users with some recommendations on artists to follow and songs to listen on the home page. 
 We use web scraping to get data from a music streaming website and load it to our database. We have 556 songs from 29 artists in our database.
+![image](https://user-images.githubusercontent.com/93358121/162550213-19caabc9-5753-4beb-9b32-fc92e10090ac.png)
 
 ## Description
 
