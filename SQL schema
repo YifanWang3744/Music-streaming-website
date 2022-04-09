@@ -1,0 +1,133 @@
+Entity Sets:
+
+Artist Table
+CREATE TABLE artist(
+	artist_id int PRIMARY KEY,
+	artist_name varchar(50) NOT NULL,
+	age int,
+	dob datetime NOT NULL,
+	nationality varchar(20)
+);
+
+
+Album Table
+CREATE TABLE album(
+	album_id int PRIMARY KEY,
+	album_name varchar(50) NOT NULL,
+	release_time date NOT NULL,
+	record_id int
+);
+
+
+Song Table
+CREATE TABLE song_partof(
+	song_id int PRIMARY KEY,
+	name varchar(20) NOT NULL,
+	rel_time date NOT NULL,
+	album_id int,
+	FOREIGN KEY (album_id) references album ON DELETE CASCADE
+);
+
+
+Users Table
+CREATE TABLE users(
+	user_id int PRIMARY KEY,
+	name varchar(50) NOT NULL,
+	gender varchar(1),
+	age int CHECK (age>=10),
+	dob date NOT NULL,
+	email varchar(50),
+	log_in varchar(20) NOT NULL,
+	password varchar(20) NOT NULL
+);
+
+
+Playlist_createdby Table
+CREATE TABLE playlist_createdby(
+	playlist_id int PRIMARY KEY,
+	name varchar(50) NOT NULL,
+	time date NOT NULL,
+	no_of_songs int,
+	creator_user_id int,
+	is_public bool,
+	FOREIGN KEY (creator_user_id) references users ON DELETE CASCADE
+);
+
+
+Genre Table
+CREATE TABLE genre(
+	genre_id int PRIMARY KEY,
+	name varchar(20)
+);
+
+
+Record Table
+CREATE TABLE record(
+	record_id int PRIMARY KEY,
+	name varchar(50)
+);
+
+
+
+
+Entity Relations
+
+Artist of Table
+CREATE TABLE artist_of(
+	artist_id int,
+	album_id int,
+	FOREIGN KEY (artist_id) references artist,
+	FOREIGN KEY (album_id) references album,
+	PRIMARY KEY(album_id, artist_id)
+);
+
+
+Owned by Table
+CREATE TABLE owned_by(
+	record_id int,
+	album_id int,
+	FOREIGN KEY (record_id) references record,
+	FOREIGN KEY (album_id) references album,
+	PRIMARY KEY(album_id, record_id)
+);
+
+
+Belongs to Table
+CREATE TABLE belongs_to(
+	song_id int,
+	genre_id int,
+	FOREIGN KEY (song_id) references song,
+	FOREIGN KEY (genre_id) references genre,
+	PRIMARY KEY(song_id, genre_id)
+);
+
+
+Is in Table
+CREATE TABLE is_in(
+	song_id int,
+	playlist_id int,
+	FOREIGN KEY (song_id) references song,
+	FOREIGN KEY (playlist_id) references playlist_createdby,
+	PRIMARY KEY(song_id, playlist_id)
+);
+
+
+Followed by Table
+CREATE TABLE followed_by(
+	artist_id int,
+	user_id int,
+	FOREIGN KEY (user_id) references users,
+	FOREIGN KEY (artist_id) references artist,
+	PRIMARY KEY(user_id, artist_id)
+);
+
+
+Starred by Table
+CREATE TABLE starred_by(
+	user_id int,
+	playlist_id int,
+	FOREIGN KEY (user_id) references users,
+	FOREIGN KEY (playlist_id) references playlist_createdby,
+	PRIMARY KEY(user_id, playlist_id)
+);
+
