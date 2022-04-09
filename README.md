@@ -19,9 +19,6 @@ We use web scraping to get data from a music streaming website and load it to ou
 
 ## Description
 
-The final E-R diagram of our database is shown below:
-![er-diagram](er_diagram.jpg)
-
 The tables in our database are:
 * artist: refers to an artist (individual artist or a band)
 * album: refers to an album
