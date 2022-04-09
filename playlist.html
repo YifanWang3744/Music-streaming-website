@@ -1,0 +1,56 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <div>
+    <a href="/">Home</a>    <a href="/user/">Profile</a>
+  </div>
+
+  <h1>Playlist</h1>
+  <div>Playlist Name: {{name}}</div>
+
+  {% if stars %}
+    <p>subscribed</p>
+    <div>
+      <form method="POST" action="/unstar">
+        <input name="creator_user_id" type="hidden" value="{{creator_user_id}}"></input>
+        <button name="playlist_id" type="submit" value="{{playlist_id}}">Unsubscribe</button>
+      </form>
+    </div>
+  {% else %}
+    <div>
+      <form method="POST" action="/star">
+        <button name="playlist_id" type="submit" value="{{playlist_id}}">Subscribe</button>
+      </form>
+    </div>
+  {% endif %}
+
+  <div>
+    <div>Playlist id: {{playlist_id}}</div>
+    <!-- {% if subscribes %}
+    <p>Subscribed</p>
+    {% else %} -->
+      <!-- <div>
+        <form method="POST" action="/subscribe">
+          <button name="pid" type="submit" value="{{pid}}">Subscribe</button>
+        </form>
+      </div> -->
+    <!-- {% endif %} -->
+
+    <div>Created by: <a href= "/user/{{creator_user_id}}">{{creator_name}}</a></div>
+    <h2>Songs in playlist</h2>
+    {% for s in song_list %}
+    <div><a href= "/song/{{s.song_id}}">{{s.name}}</a></div>
+    {% endfor %}
+  </div>
+
+</body>
+
+
+</html>

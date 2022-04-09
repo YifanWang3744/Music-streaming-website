@@ -1,0 +1,31 @@
+<html>
+  <style>
+    body {
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <div>
+    <a href="/">Home</a>    <a href="/user/">Profile</a>
+  </div>
+
+  <h1>Login</h1>
+
+  <form method="POST" action="/login">
+    <p>Enter Username: <input type="text" name="username"> </p>
+    <p>Enter password: <input type="text" name="password"></p>
+    <p><input type="submit" value="Login"></p>
+    {% if error_msg %}
+      <p>{{error_msg}}</p>
+    {% endif %}
+  </form>
+
+  <a href="/create">Create Account</a>
+
+</body>
+
+
+</html>

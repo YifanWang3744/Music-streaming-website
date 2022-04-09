@@ -1,0 +1,35 @@
+<html>
+  <style>
+    body {
+      font-size: 20pt;
+      font-family: arial;
+      text-align: center;
+    }
+  </style>
+
+
+<body>
+  <div>
+    <a href="/">Home</a>          <a href="/user/">Profile</a>
+  </div>
+
+  <h1>Music Streaming Website</h1>
+
+  <form method="POST" action="/search">
+    <p>Search for Artists, Albums, Songs, Playlists Etc: <br><input type="text" name="query" > <input type="submit" value="Search"></p>
+  </form>
+
+  <font size=-7><div>Artists Suggestions For You:</div>
+  {% for a in artists %}
+      <div><a href= "/artist/{{a.artist_id}}">{{a.artist_name}}</a></div>
+  {% endfor %}</font>
+<br>
+<font size=-7><div>Songs Suggestions For You:</div>
+  {% for s in songs %}
+      <div><a href= "/song/{{s.song_id}}">{{s.name}}</a></div>
+  {% endfor %}  </font>
+
+</body>
+
+
+</html>

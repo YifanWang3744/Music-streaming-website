@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+
+<body>
+  <div>
+    <a href="/">Home</a>    <a href="/user/">Profile</a>
+  </div>
+
+<h1> Results </h1>
+{% if error_message %}
+<div>{{error_message}}</div>
+{% else %}
+<div>
+    <h2>Songs Found:</h2>
+    <div>
+        {% for s in songs_found %}
+            <div><a href="song/{{s.song_id}}">{{s.name}}</a></div>
+        {% endfor %}
+    </div>
+</div>
+
+<div>
+    <h2>Albums Found:</h2>
+    <a>
+        {% for a in albums_found %}
+            <div><a href="album/{{a.album_id}}">{{a.album_name}}</a></div>
+        {% endfor %}
+  </div>
+</div>
+
+<div>
+    <h2>Artists Found:</h2>
+    <div>
+        {% for a in artists_found %}
+            <div><a href="artist/{{a.artist_id}}">{{a.artist_name}}</a></div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- <div>
+    <h2>Users Found:</h2>
+    <div>
+        {% for u in users_found %}
+            <div><a href="user/{{u.user_id}}">{{u.name}}</a></div>
+        {% endfor %}
+    </div>
+</div> -->
+
+<div>
+    <h2>Playlists Found:</h2>
+    <div>
+        {% for p in playlists_found %}
+            <div><a href="playlist/{{p.playlist_id}}">{{p.name}}</a></div>
+        {% endfor %}
+  </div>
+</div>
+
+<div>
+    <h2>Records Found:</h2>
+    <div>
+        {% for r in record_found %}
+            <div><a href="record/{{r.record_id}}">{{r.name}}</a></div>
+        {% endfor %}
+  </div>
+</div>
+
+{% endif %}
+
+</body>
+</html>

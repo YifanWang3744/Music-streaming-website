@@ -1,0 +1,31 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+
+  <div>
+    <a href="/">Home</a>    <a href="/user/">Profile</a>
+  </div>
+
+  <h1>Genre</h1>
+  <table>
+    <tr>
+      <th>Genre</th>
+    </tr>
+    {% for g in genre_list %}
+    <tr>
+      <td>{{g.name}}</th>
+    </tr>
+    {% endfor %}
+  </table>
+
+</body>
+
+
+</html>

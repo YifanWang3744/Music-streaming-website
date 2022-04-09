@@ -1,0 +1,43 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <div>
+    <a href="/">Home</a>    <a href="/user/">Profile</a>
+  </div>
+
+  <h1>User</h1>
+  <div>Username: {{username}}</div>
+
+  <div>
+    <div>User id: {{uid}}</div>
+
+    {% if is_user %}
+      <a href="/logout">Logout</a>
+      <a href="/create_playlist">Create Playlist</a>
+    {% endif %}
+
+    <h2>Following artists:</h2>
+    {% for u in following_artists:%}
+      <div><a href= "/artist/{{u.artist_id}}">{{u.artist_name}}</a></div>
+    {% endfor %}
+    <h2>Playlists Created:</h2>
+    {% for c in created_playlists %}
+    <div><a href= "/playlist/{{c.playlist_id}}">{{c.name}}</a></div>
+    {% endfor %}
+    <h2>Playlists subscribing</h2>
+    {% for s in starring_playlists %}
+    <div><a href= "/playlist/{{s.playlist_id}}">{{s.name}}</a></div>
+    {% endfor %}
+  </div>
+
+</body>
+
+
+</html>
