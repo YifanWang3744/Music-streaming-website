@@ -1,0 +1,29 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <div>
+    <a href="/">Home</a>    <a href="/user/">Profile</a>
+  </div>
+
+  <h1>Record</h1>
+  <div>Record Name: {{name}}</div>
+
+  <div>
+    <div>Record id: {{record_id}}</div>
+    <h2>Albums released</h2>
+    {% for r in album_list %}
+    <div><a href= "/album/{{r.album_id}}">{{r.name}}</a></div>
+    {% endfor %}
+  </div>
+
+</body>
+
+
+</html>

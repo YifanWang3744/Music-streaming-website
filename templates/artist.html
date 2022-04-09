@@ -1,0 +1,43 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <div>
+    <a href="/">Home</a>    <a href="/user/">Profile</a>
+  </div>
+
+  <h1>Artist</h1>
+  <div>Artist Name: {{name}}</div>
+  {% if follows %}
+    <p>Following</p>
+    <div>
+      <form method="POST" action="/unfollow">
+        <button name="artist_id" type="submit" value="{{aid}}">Unfollow</button>
+      </form>
+    </div>
+  {% else %}
+    <div>
+      <form method="POST" action="/follow">
+        <button name="artist_id" type="submit" value="{{aid}}">Follow</button>
+      </form>
+    </div>
+  {% endif %}
+
+  <div>
+    <div>Artist id: {{aid}}</div>
+    <h2>Albums released</h2>
+    {% for r in album_list %}
+    <div><a href= "/album/{{r.album_id}}">{{r.name}}</a></div>
+    {% endfor %}
+  </div>
+
+</body>
+
+
+</html>
