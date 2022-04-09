@@ -25,9 +25,9 @@ The tables in our database are:
 
 ## Web pages with interesting operations
 
-* Search page: A query is made to a number of different tables to find songs, artists, albums and playlist that match a given search term. This required using pattern matching and case-insensitive querying. And we provide users with some recommendations on artists to follow and songs to listen on the home page, in order to get new users started.
-* Artist page with follow/unfollow option: This page displays an artist and all the albums released by the artist. Additionally, you can follow the artist and find your following artists on profile page if you are not following the artist, or unfollow the artist if you have already followed. This required querying in the followed_by table first with the artist_id of the artist on current page and user's log-in id to determine if the user is following the artist, then provide follow or unfollow function based on user's status and choice.
-* Playlist page with subscribe/unsubscribe option: This page displays a playlist and all the songs in it. You can subcribe the playlist if you are not subscribing, or unsubscribe it if you are. Silimarly, this required querying in the starred_by table first with the playlist_id of the playlist on current page and user's log-in id to determine if the user is subscribing the playlist, then provide subscribe or unsubscribe function based on user's status and choice.
+* Search page: A query is made to a number of different tables to find songs, artists, albums and playlist that match a given search term. This required using pattern matching and case-insensitive querying. And we provide users with some random suggestions on artists to follow and songs to listen on the home page, in order to get new users started.
+* Artist page with follow/unfollow option: This page displays an artist and all the albums released by the artist. Additionally, you can follow the artist and find your following artists on profile page if you are not following the artist, or unfollow the artist if you have already followed. 
+* Playlist page with subscribe/unsubscribe option: This page displays a playlist and all the songs in it. You can subcribe the playlist if you are not subscribing, or unsubscribe it if you are. Besides, users can set their playlists as public or private. Other users won't be able to visit your private playlists.
 
 ## Screenshots of our website
 * **Home page**
