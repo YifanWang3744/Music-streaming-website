@@ -1,4 +1,4 @@
-# 4111Database-Project1-Music streaming website
+# A Music streaming website based on database
 
 ## Overview
 
