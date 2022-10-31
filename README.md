@@ -1,6 +1,6 @@
 # A Music streaming website based on database
 
-A full-featured NFT music player on [Ethereum](https://ethereum.org/en/) blockchain, with a decentralized music store that allows users to buy/sell songs with [MetaMask](https://metamask.io/) wallet. 
+A music streaming website based on a relational database on PostgreSQL on Google Cloud Platform. The database is consisted of 7 entities and their relationships, and the schema has 13 tables. I also developed an application with Python Flask and SQL queries which allowed users to query songs, create and subscribe to playlists, and follow artists on a web page built in HTML.
 
 Data is collected from a music streaming website by web scraping. There are 556 songs from 29 artists in the database.
 
